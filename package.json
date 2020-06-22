@@ -5,11 +5,13 @@
   "main": "./src/index.html",
   "scripts": {
     "start": "parcel ./src/index.html --open",
-    "build": "rm -rf ./dist && parcel build ./src/index.html",
+    "build": "rm -rf ./dist && parcel build ./src/index.html --public-url ./",
     "lint:js": "npx eslint ./src",
     "lint:css": "stylelint ./src",
     "lint:html": "linthtml ./src",
     "lint": "npm run lint:js && npm run lint:css && npm run lint:html",
+    "predeploy": "npm run build",
+    "deploy": "bash deploy.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
